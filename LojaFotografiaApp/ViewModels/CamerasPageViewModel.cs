@@ -117,7 +117,7 @@ namespace LojaFotografiaApp.ViewModels
             else
             {
                 var query = SearchQuery.ToLower();
-                var filtered = Cameras.Where(c => c.Marca.ToLower().Contains(query) || c.Modelo.ToLower().Contains(query)).ToList();
+                var filtered = Cameras.Where(c => c.Brand.ToLower().Contains(query) || c.Model.ToLower().Contains(query)).ToList();
                 FilteredCameras.Clear();
                 foreach (var camera in filtered)
                 {
@@ -145,7 +145,7 @@ namespace LojaFotografiaApp.ViewModels
                 }
                 else
                 {
-                    var dialog = new MessageDialog($"Erro ao adicionar câmera - {response.Content.ToString()}");
+                    var dialog = new MessageDialog($"Erro ao adicionar câmera - {response.StatusCode.ToString()}");
                     await dialog.ShowAsync();
                 }
             }

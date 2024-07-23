@@ -2,9 +2,9 @@
 {
     public class CameraDto
     {
-        public required string Marca { get; set; }
-        public string? Modelo { get; set; }
-        public decimal Preco { get; set; }
-        public string? Descricao { get; set; }
+        public required string Brand { get; set; }
+        public string? Model { get; set; }
+        public decimal Price { get; set; }
+        public string? Description { get; set; }
     }
 }

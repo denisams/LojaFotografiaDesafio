@@ -19,10 +19,10 @@
 
             <!-- Formulário de Edição de Acessório -->
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="10">
-                <TextBox PlaceholderText="Nome" Text="{Binding CurrentAcessorio.Nome, Mode=TwoWay}" Width="300"/>
-                <TextBox PlaceholderText="Marca" Text="{Binding CurrentAcessorio.Marca, Mode=TwoWay}" Width="300"/>
-                <TextBox PlaceholderText="Preço" Text="{Binding CurrentAcessorio.Preco, Mode=TwoWay, Converter={StaticResource StringToDecimalConverter}}" Width="300"/>
-                <TextBox PlaceholderText="Descrição" Text="{Binding CurrentAcessorio.Descricao, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Name" Text="{Binding CurrentAcessorio.Name, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Brand" Text="{Binding CurrentAcessorio.Brand, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Price" Text="{Binding CurrentAcessorio.Price, Mode=TwoWay, Converter={StaticResource StringToDecimalConverter}}" Width="300"/>
+                <TextBox PlaceholderText="Description" Text="{Binding CurrentAcessorio.Description, Mode=TwoWay}" Width="300"/>
 
                 <!-- Botão de Salvar -->
                 <Button Content="Salvar" Command="{Binding SaveAcessorioCommand}" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Center"/>

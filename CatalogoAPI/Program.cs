@@ -90,7 +90,7 @@ builder.Services.AddSwaggerGen(c =>
 
 // Registre o repositório no contêiner de serviços
 builder.Services.AddScoped<ICameraRepository, CameraRepository>();
-builder.Services.AddScoped<IAcessorioRepository, AcessorioRepository>();
+builder.Services.AddScoped<IAccessoryRepository, AcessorioRepository>();
 
 var app = builder.Build();
 

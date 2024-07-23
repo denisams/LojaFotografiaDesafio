@@ -21,10 +21,10 @@
 
             <!-- Formulário de Adição de Câmera -->
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="10">
-                <TextBox PlaceholderText="Marca" Text="{Binding NewCamera.Marca, Mode=TwoWay}" Width="300"/>
-                <TextBox PlaceholderText="Modelo" Text="{Binding NewCamera.Modelo, Mode=TwoWay}" Width="300"/>
-                <TextBox PlaceholderText="Preço" Text="{Binding NewCamera.Preco, Mode=TwoWay, Converter={StaticResource StringToDecimalConverter}}" Width="300"/>
-                <TextBox PlaceholderText="Descrição" Text="{Binding NewCamera.Descricao, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Brand" Text="{Binding NewCamera.Brand, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Model" Text="{Binding NewCamera.Model, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Price" Text="{Binding NewCamera.Price, Mode=TwoWay, Converter={StaticResource StringToDecimalConverter}}" Width="300"/>
+                <TextBox PlaceholderText="Description" Text="{Binding NewCamera.Description, Mode=TwoWay}" Width="300"/>
 
                 <!-- Botão de Salvar -->
                 <Button Content="Salvar" Command="{Binding SaveCameraCommand}" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Center"/>

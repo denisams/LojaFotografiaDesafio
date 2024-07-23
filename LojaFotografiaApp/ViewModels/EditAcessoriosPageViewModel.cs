@@ -14,8 +14,8 @@ namespace LojaFotografiaApp.ViewModels
         private readonly IAuthService _authService;
         private readonly AcessoriosPageViewModel _acessoriosPageViewModel;
 
-        private AcessorioDto _currentAcessorio;
-        public AcessorioDto CurrentAcessorio
+        private AccessoryDto _currentAcessorio;
+        public AccessoryDto CurrentAcessorio
         {
             get => _currentAcessorio;
             set => SetProperty(ref _currentAcessorio, value);
@@ -23,7 +23,7 @@ namespace LojaFotografiaApp.ViewModels
 
         public ICommand SaveAcessorioCommand { get; }
 
-        public EditAcessoriosPageViewModel(IAuthService authService, AcessoriosPageViewModel acessoriosPageViewModel, AcessorioDto acessorio)
+        public EditAcessoriosPageViewModel(IAuthService authService, AcessoriosPageViewModel acessoriosPageViewModel, AccessoryDto acessorio)
         {
             _authService = authService;
             _acessoriosPageViewModel = acessoriosPageViewModel;

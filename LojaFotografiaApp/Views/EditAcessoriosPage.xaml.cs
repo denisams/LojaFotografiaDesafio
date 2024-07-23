@@ -19,7 +19,7 @@ namespace LojaFotografiaApp.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            if (e.Parameter is Tuple<AcessoriosPageViewModel, AcessorioDto> navigationParameter)
+            if (e.Parameter is Tuple<AcessoriosPageViewModel, AccessoryDto> navigationParameter)
             {
                 var acessoriosPageViewModel = navigationParameter.Item1;
                 var acessorio = navigationParameter.Item2;

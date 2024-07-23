@@ -20,10 +20,10 @@ namespace LojaFotografiaApp.ViewModels
         private readonly HttpClient _httpClient;
         private readonly IAuthService _authService;
 
-        public ObservableCollection<AcessorioDto> Acessorios { get; set; } = new ObservableCollection<AcessorioDto>();
-        public ObservableCollection<AcessorioDto> FilteredAcessorios { get; set; } = new ObservableCollection<AcessorioDto>();
+        public ObservableCollection<AccessoryDto> Acessorios { get; set; } = new ObservableCollection<AccessoryDto>();
+        public ObservableCollection<AccessoryDto> FilteredAcessorios { get; set; } = new ObservableCollection<AccessoryDto>();
 
-        public AcessorioDto SelectedAcessorio { get; set; }
+        public AccessoryDto SelectedAcessorio { get; set; }
 
         private string _searchQuery;
         public string SearchQuery
@@ -66,8 +66,8 @@ namespace LojaFotografiaApp.ViewModels
             SearchCommand = new RelayCommand(async (param) => await SearchAcessorios());
             AddAcessorioCommand = new RelayCommand(param => NavigateToAddAcessorioPage());
             RemoveAcessorioCommand = new RelayCommand(async (param) => await RemoveAcessorio());
-            UpdateAcessorioCommand = new RelayCommand(param => NavigateToEditAcessorioPage(param as AcessorioDto));
-            DeleteAcessorioCommand = new RelayCommand(async (param) => await DeleteAcessorio(param as AcessorioDto));
+            UpdateAcessorioCommand = new RelayCommand(param => NavigateToEditAcessorioPage(param as AccessoryDto));
+            DeleteAcessorioCommand = new RelayCommand(async (param) => await DeleteAcessorio(param as AccessoryDto));
 
             // Carregar câmeras ao inicializar
             LoadAcessoriosCommand.Execute(null);
@@ -77,7 +77,7 @@ namespace LojaFotografiaApp.ViewModels
         {
             try
             {
-                var acessorios = await _httpClient.GetFromJsonAsync<AcessorioDto[]>("api/Acessorio");
+                var acessorios = await _httpClient.GetFromJsonAsync<AccessoryDto[]>("api/Acessorio");
                 if (acessorios != null)
                 {
                     Acessorios.Clear();
@@ -125,7 +125,7 @@ namespace LojaFotografiaApp.ViewModels
             else
             {
                 var query = SearchQuery.ToLower();
-                var filtered = Acessorios.Where(a => a.Nome.ToLower().Contains(query) || a.Marca.ToLower().Contains(query)).ToList();
+                var filtered = Acessorios.Where(a => a.Name.ToLower().Contains(query) || a.Brand.ToLower().Contains(query)).ToList();
                 FilteredAcessorios.Clear();
                 foreach (var acessorio in filtered)
                 {
@@ -134,7 +134,7 @@ namespace LojaFotografiaApp.ViewModels
             }
         }
 
-        public async Task AddAcessorio(AcessorioDto acessorio)
+        public async Task AddAcessorio(AccessoryDto acessorio)
         {
             try
             {
@@ -189,7 +189,7 @@ namespace LojaFotografiaApp.ViewModels
             }
         }
 
-        public async Task UpdateAcessorio(AcessorioDto acessorio)
+        public async Task UpdateAcessorio(AccessoryDto acessorio)
         {
             try
             {
@@ -215,7 +215,7 @@ namespace LojaFotografiaApp.ViewModels
 
         }
 
-        private async Task DeleteAcessorio(AcessorioDto acessorio)
+        private async Task DeleteAcessorio(AccessoryDto acessorio)
         {
             try
             {
@@ -250,10 +250,10 @@ namespace LojaFotografiaApp.ViewModels
             rootFrame.Navigate(typeof(AddAcessoriosPage), this);
         }
 
-        private void NavigateToEditAcessorioPage(AcessorioDto acessorio)
+        private void NavigateToEditAcessorioPage(AccessoryDto acessorio)
         {
             Frame rootFrame = Windows.UI.Xaml.Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(EditAcessoriosPage), new Tuple<AcessoriosPageViewModel, AcessorioDto>(this, acessorio));
+            rootFrame.Navigate(typeof(EditAcessoriosPage), new Tuple<AcessoriosPageViewModel, AccessoryDto>(this, acessorio));
         }
 
 

@@ -44,10 +44,10 @@ namespace CatalogoAPI.Controllers
             var camera = new Camera
             {
                 Id = novoId,
-                Marca = cameraDto.Marca,
-                Modelo = cameraDto.Modelo,
-                Preco = cameraDto.Preco,
-                Descricao = cameraDto.Descricao
+                Brand = cameraDto.Brand,
+                Model = cameraDto.Model,
+                Price = cameraDto.Price,
+                Description = cameraDto.Description
             };
 
             await _cameraRepository.AddAsync(camera);
@@ -63,10 +63,10 @@ namespace CatalogoAPI.Controllers
             if (existingCamera == null)
                 return NotFound();
 
-            existingCamera.Marca = cameraDto.Marca;
-            existingCamera.Modelo = cameraDto.Modelo;
-            existingCamera.Preco = cameraDto.Preco;
-            existingCamera.Descricao = cameraDto.Descricao;
+            existingCamera.Brand = cameraDto.Brand;
+            existingCamera.Model = cameraDto.Model;
+            existingCamera.Price = cameraDto.Price;
+            existingCamera.Description = cameraDto.Description;
 
             await _cameraRepository.UpdateAsync(existingCamera);
             return NoContent();

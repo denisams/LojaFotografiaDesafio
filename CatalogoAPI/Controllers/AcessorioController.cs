@@ -10,54 +10,54 @@ namespace CatalogoAPI.Controllers
     [Route("api/[controller]")]
     public class AcessorioController : ControllerBase
     {
-        private readonly IAcessorioRepository _acessorioRepository;
+        private readonly IAccessoryRepository _accessoryRepository;
 
-        public AcessorioController(IAcessorioRepository acessorioRepository)
+        public AcessorioController(IAccessoryRepository accessoryRepository)
         {
-            _acessorioRepository = acessorioRepository;
+            _accessoryRepository = accessoryRepository;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var acessorios = await _acessorioRepository.GetAllAsync();
-            return Ok(acessorios);
+            var accessory = await _accessoryRepository.GetAllAsync();
+            return Ok(accessory);
         }
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
-            var acessorio = await _acessorioRepository.GetByIdAsync(id);
-            if (acessorio == null)
+            var accessory = await _accessoryRepository.GetByIdAsync(id);
+            if (accessory == null)
             {
                 return NotFound();
             }
-            return Ok(acessorio);
+            return Ok(accessory);
         }
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Post([FromBody] Acessorio acessorio)
+        public async Task<IActionResult> Post([FromBody] Accessory accessory)
         {
-            int newId = await _acessorioRepository.GetNextIdAsync();
-            acessorio.Id = newId;
+            int newId = await _accessoryRepository.GetNextIdAsync();
+            accessory.Id = newId;
 
-            await _acessorioRepository.AddAsync(acessorio);
-            return CreatedAtAction(nameof(Get), new { id = acessorio.Id }, acessorio);
+            await _accessoryRepository.AddAsync(accessory);
+            return CreatedAtAction(nameof(Get), new { id = accessory.Id }, accessory);
         }
 
         [HttpPut("{id:int}")]
         [Authorize]
-        public async Task<IActionResult> Put(int id, [FromBody] Acessorio acessorio)
+        public async Task<IActionResult> Put(int id, [FromBody] Accessory accessory)
         {
-            var existingAcessorio = await _acessorioRepository.GetByIdAsync(id);
+            var existingAcessorio = await _accessoryRepository.GetByIdAsync(id);
             if (existingAcessorio == null)
             {
                 return NotFound();
             }
 
-            acessorio.Id = id; // Garantir que o ID do acessório a ser atualizado corresponda ao ID fornecido
-            await _acessorioRepository.UpdateAsync(acessorio);
+            accessory.Id = id; // Garantir que o ID do acessório a ser atualizado corresponda ao ID fornecido
+            await _accessoryRepository.UpdateAsync(accessory);
             return NoContent();
         }
 
@@ -65,12 +65,12 @@ namespace CatalogoAPI.Controllers
         [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
-            var acessorio = await _acessorioRepository.GetByIdAsync(id);
+            var acessorio = await _accessoryRepository.GetByIdAsync(id);
             if (acessorio == null)
             {
                 return NotFound();
             }
-            await _acessorioRepository.DeleteAsync(id);
+            await _accessoryRepository.DeleteAsync(id);
             return NoContent();
         }
     }

@@ -16,10 +16,10 @@
             <TextBlock Text="Editar Câmera" Style="{StaticResource HeaderText}" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="10">
-                <TextBox PlaceholderText="Marca" Text="{Binding CurrentCamera.Marca, Mode=TwoWay}" Width="300"/>
-                <TextBox PlaceholderText="Modelo" Text="{Binding CurrentCamera.Modelo, Mode=TwoWay}" Width="300"/>
-                <TextBox PlaceholderText="Preço" Text="{Binding CurrentCamera.Preco, Mode=TwoWay, Converter={StaticResource StringToDecimalConverter}}" Width="300"/>
-                <TextBox PlaceholderText="Descrição" Text="{Binding CurrentCamera.Descricao, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Brand" Text="{Binding CurrentCamera.Brand, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Model" Text="{Binding CurrentCamera.Model, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Price" Text="{Binding CurrentCamera.Price, Mode=TwoWay, Converter={StaticResource StringToDecimalConverter}}" Width="300"/>
+                <TextBox PlaceholderText="Description" Text="{Binding CurrentCamera.Description, Mode=TwoWay}" Width="300"/>
 
                 <Button Content="Salvar" Command="{Binding SaveCameraCommand}" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Center"/>
             </StackPanel>

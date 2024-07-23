@@ -32,28 +32,12 @@ namespace Tests.Catalogo.IntegrationTests
             Assert.NotNull(cameras);
         }
 
-        [Fact]
-        public async Task GetByIdAsync_ReturnsOkResult_WithCamera()
-        {
-            // Arrange
-            var cameraId = await _factory.GetLastInsertedIdAsync();
-
-            // Act
-            var response = await _client.GetAsync($"/api/camera/{cameraId}");
-
-            // Assert
-            response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
-            var camera = JsonConvert.DeserializeObject<Camera>(responseString);
-            Assert.NotNull(camera);
-        }
-        
-
+      
         [Fact]
         public async Task AddAsync_ReturnsOkResult_WithCreatedCamera()
         {
             // Arrange
-            var cameraDto = new CameraDto { Marca = "Canon", Modelo = "EOS R5", Preco = 4000, Descricao = "Camera Full-Frame" };
+            var cameraDto = new CameraDto { Brand = "Canon", Model = "EOS R5", Price = 4000, Description = "Camera Full-Frame" };
             var content = new StringContent(JsonConvert.SerializeObject(cameraDto), Encoding.UTF8, "application/json");
 
             var token = _factory.GenerateJwtToken();
@@ -69,14 +53,31 @@ namespace Tests.Catalogo.IntegrationTests
             var responseString = await response.Content.ReadAsStringAsync();
             var createdCamera = JsonConvert.DeserializeObject<Camera>(responseString);
             Assert.NotNull(createdCamera);
-            Assert.Equal("Canon", createdCamera.Marca);
+            Assert.Equal("Canon", createdCamera.Brand);
         }
+
+        [Fact]
+        public async Task GetByIdAsync_ReturnsOkResult_WithCamera()
+        {
+            // Arrange
+            var cameraId = await _factory.GetLastInsertedIdAsync();
+
+            // Act
+            var response = await _client.GetAsync($"/api/camera/{cameraId}");
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+            var camera = JsonConvert.DeserializeObject<Camera>(responseString);
+            Assert.NotNull(camera);
+        }
+
 
         [Fact]
         public async Task UpdateAsync_ReturnsNoContentResult()
         {
             // Arrange
-            var cameraDto = new CameraDto { Marca = "Canon", Modelo = "EOS R5", Preco = 4000, Descricao = "Camera Full-Frame" };
+            var cameraDto = new CameraDto { Brand = "Canon", Model = "EOS R5", Price = 4000, Description = "Camera Full-Frame" };
             var content = new StringContent(JsonConvert.SerializeObject(cameraDto), Encoding.UTF8, "application/json");
             var cameraId = await _factory.GetLastInsertedIdAsync();
             var token = _factory.GenerateJwtToken();

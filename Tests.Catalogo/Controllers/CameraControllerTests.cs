@@ -24,8 +24,8 @@ namespace Tests.Catalogo.Controllers
             // Arrange
             var cameras = new List<Camera>
             {
-                new Camera { Id = 1, Marca = "Canon", Modelo = "EOS R5", Preco = 4000, Descricao = "Camera Full-Frame" },
-                new Camera { Id = 2, Marca = "Nikon", Modelo = "Z7 II", Preco = 3000, Descricao = "Mirrorless Camera" }
+                new Camera { Id = 1, Brand = "Canon", Model = "EOS R5", Price = 4000, Description = "Camera Full-Frame" },
+                new Camera { Id = 2, Brand = "Nikon", Model = "Z7 II", Price = 3000, Description = "Mirrorless Camera" }
             };
             _mockCameraRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(cameras);
 
@@ -42,7 +42,7 @@ namespace Tests.Catalogo.Controllers
         public async Task GetByIdAsync_ReturnsOkResult_WithCamera()
         {
             // Arrange
-            var camera = new Camera { Id = 1, Marca = "Canon", Modelo = "EOS R5", Preco = 4000, Descricao = "Camera Full-Frame" };
+            var camera = new Camera { Id = 1, Brand = "Canon", Model = "EOS R5", Price = 4000, Description = "Camera Full-Frame" };
             _mockCameraRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync(camera);
 
             // Act
@@ -71,7 +71,7 @@ namespace Tests.Catalogo.Controllers
         public async Task AddAsync_ReturnsOkResult_WithCreatedCamera()
         {
             // Arrange
-            var cameraDto = new CameraDto { Marca = "Canon", Modelo = "EOS R5", Preco = 4000, Descricao = "Camera Full-Frame" };
+            var cameraDto = new CameraDto { Brand = "Canon", Model = "EOS R5", Price = 4000, Description = "Camera Full-Frame" };
             _mockCameraRepository.Setup(repo => repo.GetNextIdAsync()).ReturnsAsync(1);
 
             // Act
@@ -87,8 +87,8 @@ namespace Tests.Catalogo.Controllers
         public async Task UpdateAsync_ReturnsNoContentResult_WhenCameraUpdated()
         {
             // Arrange
-            var cameraDto = new CameraDto { Marca = "Canon", Modelo = "EOS R5", Preco = 4000, Descricao = "Camera Full-Frame" };
-            var camera = new Camera { Id = 1, Marca = "Canon", Modelo = "EOS R", Preco = 3500, Descricao = "Mirrorless Camera" };
+            var cameraDto = new CameraDto { Brand = "Canon", Model = "EOS R5", Price = 4000, Description = "Camera Full-Frame" };
+            var camera = new Camera { Id = 1, Brand = "Canon", Model = "EOS R", Price = 3500, Description = "Mirrorless Camera" };
             _mockCameraRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync(camera);
 
             // Act
@@ -102,7 +102,7 @@ namespace Tests.Catalogo.Controllers
         public async Task UpdateAsync_ReturnsNotFoundResult_WhenCameraNotFound()
         {
             // Arrange
-            var cameraDto = new CameraDto { Marca = "Canon", Modelo = "EOS R5", Preco = 4000, Descricao = "Camera Full-Frame" };
+            var cameraDto = new CameraDto { Brand = "Canon", Model = "EOS R5", Price = 4000, Description = "Camera Full-Frame" };
             _mockCameraRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync((Camera)null);
 
             // Act
@@ -116,7 +116,7 @@ namespace Tests.Catalogo.Controllers
         public async Task DeleteAsync_ReturnsNoContentResult_WhenCameraDeleted()
         {
             // Arrange
-            var camera = new Camera { Id = 1, Marca = "Canon", Modelo = "EOS R5", Preco = 4000, Descricao = "Camera Full-Frame" };
+            var camera = new Camera { Id = 1, Brand = "Canon", Model = "EOS R5", Price = 4000, Description = "Camera Full-Frame" };
             _mockCameraRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync(camera);
 
             // Act

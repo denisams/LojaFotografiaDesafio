@@ -13,7 +13,7 @@ namespace LojaFotografiaApp.ViewModels
         private readonly IAuthService _authService;
         private readonly AcessoriosPageViewModel _acessoriosPageViewModel;
 
-        public AcessorioDto NewAcessorio { get; set; } = new AcessorioDto();
+        public AccessoryDto NewAcessorio { get; set; } = new AccessoryDto();
         public ICommand SaveAcessorioCommand { get; }
 
         public AddAcessoriosPageViewModel(IAuthService authService, AcessoriosPageViewModel acessoriosPageViewModel)
@@ -26,7 +26,7 @@ namespace LojaFotografiaApp.ViewModels
         private async Task SaveAcessorio()
         {
             // Verificar o valor do preço antes de adicionar
-            System.Diagnostics.Debug.WriteLine(NewAcessorio.Preco);
+            System.Diagnostics.Debug.WriteLine(NewAcessorio.Price);
 
             await _acessoriosPageViewModel.AddAcessorio(NewAcessorio);
 
