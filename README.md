@@ -1,6 +1,6 @@
 # LojaFotografiaDesafio
 
-Bem-vindo ao repositório **LojaFotografiaDesafio**! Este projeto é uma aplicação UWP (Universal Windows Platform) para gerenciar uma loja de fotografia, incluindo câmeras e acessórios. Abaixo está um guia detalhado sobre como configurar e utilizar o projeto.
+Bem-vindo ao repositório **LojaFotografiaDesafio**! Este projeto é uma aplicação UWP (Universal Windows Platform) para gerenciar uma loja de fotografia, incluindo câmeras e acessórios. Abaixo está um guia detalhado sobre como configurar e utilizar o projeto. O Projeto tem 2 aplicações de Autenticação e Catálogo, ambas com SWAGGER para teste do back-end, tem cache dos produtos em REDIS e armazenamento no MongoDB, conforme pedido de banco NOSql. Esses itens, MongoDB e e REDIS estão em container e podem ser ativados com o docker-compose, sendo necessário apenas a máquina que vai rodar a aplicação ter o docker-desktop.
 
 ## Sumário
 
@@ -22,6 +22,7 @@ Antes de começar, certifique-se de ter os seguintes requisitos atendidos:
 - **Visual Studio 2019 ou 2022** com as ferramentas UWP instaladas.
 - **Windows 10** ou superior.
 - **SDK Windows 10** versão 10.0.18362.0 ou superior.
+- Docker-Desktop(Para os containers de MongoDB e REDIS)
 
 ## Instalação
 
