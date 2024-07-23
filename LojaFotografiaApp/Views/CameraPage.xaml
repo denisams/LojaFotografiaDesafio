@@ -50,7 +50,7 @@
                                 <Setter Property="Margin" Value="0,5" />
                                 <Setter Property="Padding" Value="0" />
                                 <Setter Property="Background" Value="White" />
-                                <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
+                                <Setter Property="BorderBrush" Value="{StaticResource SecondaryBrush}" />
                                 <Setter Property="BorderThickness" Value="1" />
                                 <Setter Property="CornerRadius" Value="4" />
                                 <Setter Property="Template">
@@ -70,7 +70,7 @@
                                                         <VisualState x:Name="Selected">
                                                             <Storyboard>
                                                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ContentPresenter">
-                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PrimaryBrush}" />
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonHoverBrush}" />
                                                                 </ObjectAnimationUsingKeyFrames>
                                                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                                                     <DiscreteObjectKeyFrame KeyTime="0" Value="White" />
