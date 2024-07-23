@@ -25,6 +25,7 @@ Antes de começar, certifique-se de ter os seguintes requisitos atendidos:
 - **Windows 10** ou superior.
 - **SDK Windows 10** versão 10.0.18362.0 ou superior.
 - Docker-Desktop(Para os containers de MongoDB e REDIS)
+- Necessário verificar se a aplicação baixada está para iniciar multiplos projetos, como: Auth.API, Catalogo.API e Aplicação UWP.
 
 ## Instalação
 
