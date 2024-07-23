@@ -57,7 +57,8 @@ Para acessar as funcionalidades do sistema, você precisa realizar o login:
 1. Execute a aplicação.
 2. Navegue até a página de login.
 3. Insira suas credenciais (usuário e senha) e clique no botão "Login".
-4. Caso as credenciais estejam corretas, você será redirecionado para a página principal com uma mensagem de boas-vindas.
+   - Quando terminar de criar o banco, não terá usuário, pelo Swagger do Auth, eu deixei o endpoint para que possa fazer o cadastro de usuários.    
+5. Caso as credenciais estejam corretas, você será redirecionado para a página principal com uma mensagem de boas-vindas.
 
 ### Gerenciar Câmeras
 
