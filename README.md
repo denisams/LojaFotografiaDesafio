@@ -15,6 +15,7 @@ Bem-vindo ao repositório **LojaFotografiaDesafio**! Este projeto é uma aplica�
    - [Gerenciar Acessórios](#gerenciar-acessórios)
 5. [Ambiente de Desenvolvimento](#ambiente-de-desenvolvimento)
    - [Docker Compose](#docker-compose)
+6. [Testes](#Testes)
 
 
 ## Requisitos
@@ -98,6 +99,10 @@ Para parar e remover os containers, use o comando:
 ```sh
 docker-compose down
 ```
+
+## Testes
+
+Para os testes, é necessário apenas executar o Gerenciados de testes.  Porém, para a validação do Integrado de Login, Crie um usuário 'teste' com a senha 'password', para a validação de credencial.
 
 ---
 
