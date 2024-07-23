@@ -11,6 +11,9 @@ Bem-vindo ao repositório **LojaFotografiaDesafio**! Este projeto é uma aplica�
    - [Login](#login)
    - [Gerenciar Câmeras](#gerenciar-câmeras)
    - [Gerenciar Acessórios](#gerenciar-acessórios)
+5. [Ambiente de Desenvolvimento](#ambiente-de-desenvolvimento)
+   - [Docker Compose](#docker-compose)
+
 
 ## Requisitos
 
@@ -75,7 +78,20 @@ Para gerenciar acessórios:
    - **Editar**: Selecione um acessório e clique no ícone de edição. Faça as alterações necessárias e salve.
    - **Excluir**: Selecione um acessório e clique no ícone de exclusão.
 
+## Ambiente de Desenvolvimento
+
+Para facilitar o gerenciamento dos serviços de banco de dados e cache, utilizamos o Docker Compose para configurar e iniciar o MongoDB e o Redis. Siga os passos abaixo para configurar o ambiente:
+
+1. Certifique-se de que o Docker está instalado e em execução no seu sistema.
+2. Navegue até o diretório onde o arquivo `docker-compose.yml` está localizado.
+3. Execute o comando `docker-compose up -d` para iniciar os serviços.
+4. Verifique se os containers estão em execução com o comando `docker-compose ps`.
+
+Para parar e remover os containers, use o comando:
+```sh
+docker-compose down
+```
 
 ---
 
-Obrigado pela oportunidade do desafio e por testar o utilizar **LojaFotografiaDesafio**! Se tiver dúvidas ou encontrar problemas, sinta-se à vontade para abrir uma issue no repositório.
+Obrigado pelo desafio e utilizar **LojaFotografiaDesafio**! Se tiver dúvidas ou encontrar problemas, sinta-se à vontade para abrir uma issue no repositório.
