@@ -57,7 +57,7 @@ Para acessar as funcionalidades do sistema, você precisa realizar o login:
 1. Execute a aplicação.
 2. Navegue até a página de login.
 3. Insira suas credenciais (usuário e senha) e clique no botão "Login".
-   - Quando terminar de criar o banco, não terá usuário, pelo Swagger do Auth, eu deixei o endpoint para que possa fazer o cadastro de usuários.    
+   - Quando terminar de criar o banco, não terá usuário.  Pelo Swagger do Auth, eu deixei o endpoint para que possa fazer o cadastro de usuários.    
 5. Caso as credenciais estejam corretas, você será redirecionado para a página principal com uma mensagem de boas-vindas.
 
 ### Gerenciar Câmeras
@@ -66,7 +66,7 @@ Para gerenciar câmeras:
 
 1. Navegue até a seção "Gerenciar Câmeras".
 2. Você verá uma lista de câmeras cadastradas.
-3. As ações disponíveis incluem:
+3. As ações disponíveis incluem: (Necessário Login para os itens abaixo)
    - **Adicionar**: Clique no botão "Adicionar Câmera" e preencha o formulário.
    - **Editar**: Selecione uma câmera e clique no ícone de edição. Faça as alterações necessárias e salve.
    - **Excluir**: Selecione uma câmera e clique no ícone de exclusão.
@@ -77,7 +77,7 @@ Para gerenciar acessórios:
 
 1. Navegue até a seção "Gerenciar Acessórios".
 2. Você verá uma lista de acessórios cadastrados.
-3. As ações disponíveis incluem:
+3. As ações disponíveis incluem: (Necessário Login para os itens abaixo)
    - **Adicionar**: Clique no botão "Adicionar Acessório" e preencha o formulário.
    - **Editar**: Selecione um acessório e clique no ícone de edição. Faça as alterações necessárias e salve.
    - **Excluir**: Selecione um acessório e clique no ícone de exclusão.
