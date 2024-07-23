@@ -48,7 +48,7 @@ Antes de executar a aplicação, algumas configurações precisam ser feitas:
 
 ## Uso
 
-### Login
+### Login - (Será necessário para Adicionar, Atualizar ou Apagar Câmeras e Acessórios.  A Listagem dos mesmos não tem necessidade de Login)
 
 Para acessar as funcionalidades do sistema, você precisa realizar o login:
 
