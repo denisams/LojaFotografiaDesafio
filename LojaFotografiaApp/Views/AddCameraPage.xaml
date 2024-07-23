@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="LojaFotografiaApp.Views.AddCameraPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LojaFotografiaApp.Views"
+    xmlns:vm="using:LojaFotografiaApp.ViewModels"
+    Background="{StaticResource BackgroundBrush}">
+
+    <Grid Padding="20">
+        <StackPanel>
+            <!-- Botão Voltar -->
+            <Button Content="Voltar" Click="NavigateToCamerasPage" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,10"/>
+
+            <!-- Título -->
+            <TextBlock Text="Adicionar Nova Câmera" Style="{StaticResource HeaderText}" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <!-- Formulário de Adição de Câmera -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="10">
+                <TextBox PlaceholderText="Marca" Text="{Binding NewCamera.Marca, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Modelo" Text="{Binding NewCamera.Modelo, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Preço" Text="{Binding NewCamera.Preco, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Descrição" Text="{Binding NewCamera.Descricao, Mode=TwoWay}" Width="300"/>
+
+                <!-- Botão de Salvar -->
+                <Button Content="Salvar" Command="{Binding SaveCameraCommand}" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="LojaFotografiaApp.Views.EditAcessoriosPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LojaFotografiaApp.Views"
+    xmlns:vm="using:LojaFotografiaApp.ViewModels"
+    Background="{StaticResource BackgroundBrush}">
+
+    <Grid Padding="20">
+        <StackPanel>
+            <!-- Botão Voltar -->
+            <Button Content="Voltar" Click="NavigateToAcessoriosPage" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,10"/>
+
+            <!-- Título -->
+            <TextBlock Text="Editar Acessório" Style="{StaticResource HeaderText}" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <!-- Formulário de Edição de Acessório -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="10">
+                <TextBox PlaceholderText="Nome" Text="{Binding CurrentAcessorio.Nome, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Marca" Text="{Binding CurrentAcessorio.Marca, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Preço" Text="{Binding CurrentAcessorio.Preco, Mode=TwoWay}" Width="300"/>
+                <TextBox PlaceholderText="Descrição" Text="{Binding CurrentAcessorio.Descricao, Mode=TwoWay}" Width="300"/>
+
+                <!-- Botão de Salvar -->
+                <Button Content="Salvar" Command="{Binding SaveAcessorioCommand}" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

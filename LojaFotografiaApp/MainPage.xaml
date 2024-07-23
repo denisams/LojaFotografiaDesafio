@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="LojaFotografiaApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LojaFotografiaApp.Views"
+    xmlns:vm="using:LojaFotografiaApp.ViewModels"
+    xmlns:conv="using:LojaFotografiaApp.Converters"
+    Background="{StaticResource BackgroundBrush}">
+
+    <Page.DataContext>
+        <vm:MainPageViewModel />
+    </Page.DataContext>
+
+    <Grid Padding="20">
+        <StackPanel>
+            <TextBlock Text="Main Page" Style="{StaticResource HeaderText}" Margin="0,0,0,20"/>
+            <TextBlock Text="{Binding WelcomeMessage}" Style="{StaticResource HeaderText}" Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,0,0,20"/>
+
+            <!-- StackPanel horizontal para organizar os botões em linha -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Spacing="10">
+                <Button Content="Gerenciar Câmeras" Command="{Binding NavigateToCamerasPageCommand}" Style="{StaticResource PrimaryButton}" Margin="5"/>
+                <Button Content="Gerenciar Acessórios" Command="{Binding NavigateToAcessoriosPageCommand}" Style="{StaticResource PrimaryButton}" Margin="5"/>
+                <Button Content="Login" Command="{Binding NavigateToLoginCommand}" Style="{StaticResource SecondaryButton}" Margin="5"/>
+                <Button Content="Logout" Command="{Binding LogoutCommand}" Style="{StaticResource SecondaryButton}" Margin="5" Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </StackPanel>
+
+            <!-- Exibe mensagem condicional com base no estado de login -->
+            <TextBlock Text="Você está logado" Style="{StaticResource BodyText}" Foreground="Green" HorizontalAlignment="Center" Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>
