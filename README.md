@@ -54,6 +54,8 @@ Antes de executar a aplicação, algumas configurações precisam ser feitas:
 
 ### Login 
 ## (Será necessário para Adicionar, Atualizar ou Apagar Câmeras e Acessórios.  A Listagem dos mesmos não tem necessidade de Login)
+![image](https://github.com/user-attachments/assets/7d05a4e1-4a5d-4a9f-8b15-b9d3937fa9c3)
+
 
 Para acessar as funcionalidades do sistema, você precisa realizar o login: 
 
@@ -65,6 +67,7 @@ Para acessar as funcionalidades do sistema, você precisa realizar o login:
 5. Caso as credenciais estejam corretas, você será redirecionado para a página principal com uma mensagem de boas-vindas.
 
 ### Gerenciar Câmeras
+![image](https://github.com/user-attachments/assets/d0096d02-e230-4abc-9715-9218701a960f)
 
 Para gerenciar câmeras:
 
@@ -99,6 +102,9 @@ Para parar e remover os containers, use o comando:
 ```sh
 docker-compose down
 ```
+![image](https://github.com/user-attachments/assets/b438149d-20c2-40e0-8e54-d89927c27bb2)
+![image](https://github.com/user-attachments/assets/e1f787ea-1691-40b0-901f-6a248204a923)
+
 
 ## Testes
 
