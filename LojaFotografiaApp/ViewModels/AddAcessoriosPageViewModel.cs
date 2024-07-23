@@ -2,7 +2,6 @@
 using LojaFotografiaApp.Helpers;
 using LojaFotografiaApp.Services;
 using LojaFotografiaApp.Views;
-using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml.Controls;
@@ -26,6 +25,9 @@ namespace LojaFotografiaApp.ViewModels
 
         private async Task SaveAcessorio()
         {
+            // Verificar o valor do preço antes de adicionar
+            System.Diagnostics.Debug.WriteLine(NewAcessorio.Preco);
+
             await _acessoriosPageViewModel.AddAcessorio(NewAcessorio);
 
             // Navegar de volta para a página de câmeras após salvar

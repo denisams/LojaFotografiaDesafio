@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\PriceConverter.cs" />
+    <Compile Include="Converters\StringToDecimalConverter.cs" />
     <Compile Include="DTOs\AcessorioDto.cs" />
     <Compile Include="DTOs\CameraDto.cs" />
     <Compile Include="DTOs\LoginDto.cs" />
@@ -129,6 +130,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\IAuthService.cs" />
     <Compile Include="ViewModels\EditAcessoriosPageViewModel.cs" />
     <Compile Include="ViewModels\AddAcessoriosPageViewModel.cs" />
